@@ -27,25 +27,49 @@
         }
 
         .container {
-            max-width: 800px;
-            text-align: center;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
         }
 
         .logo {
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .logo img {
-            width: 80px;
-            height: 80px;
-            border-radius: 18px;
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             background: linear-gradient(135deg, #0061ff 0%, #00c9a7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -53,19 +77,18 @@
         }
 
         h2 {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 400;
             color: #555;
             line-height: 1.6;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .request-form {
             display: flex;
             gap: 0.75rem;
-            justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .email-input {
@@ -74,7 +97,7 @@
             font-family: 'Poppins', sans-serif;
             border: 2px solid #e0e0e0;
             border-radius: 50px;
-            width: 300px;
+            width: 280px;
             outline: none;
             transition: border-color 0.2s ease;
         }
@@ -106,9 +129,7 @@
 
         .features {
             display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 2rem;
             flex-wrap: wrap;
         }
 
@@ -126,7 +147,25 @@
             color: #00c9a7;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-image {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+
+            .hero-image img {
+                max-width: 400px;
+            }
+
             h1 {
                 font-size: 2.5rem;
             }
@@ -135,65 +174,82 @@
                 font-size: 1.1rem;
             }
 
+            .request-form {
+                justify-content: center;
+            }
+
+            .features {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 500px) {
             .email-input {
                 width: 100%;
             }
 
             .request-form {
                 flex-direction: column;
-                align-items: center;
+                align-items: stretch;
+            }
+
+            .cta-button {
+                width: 100%;
             }
 
             .features {
-                gap: 1.5rem;
+                gap: 1rem;
+            }
+
+            .hero-image img {
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">
-            <img src="biniqicon.png" alt="biniq">
-        </div>
-        
-        <h1>Reverse Engineer iOS App Binaries</h1>
-        
-        <h2>See exactly which frameworks, bundles, and packages any iOS app uses.</h2>
-        
-        <form class="request-form" onsubmit="handleSubmit(event)">
-            <input type="email" class="email-input" placeholder="Enter your email" required>
-            <button type="submit" class="cta-button">Request Access</button>
-        </form>
-        
-        <div class="features">
-            <div class="feature">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>Competitive Intelligence</span>
+        <div class="hero">
+            <div class="hero-content">
+                <div class="logo">
+                    <img src="biniqicon.png" alt="biniq">
+                </div>
+                
+                <h1>Reverse Engineer iOS App Binaries</h1>
+                
+                <h2>See exactly which frameworks, bundles, and packages any iOS app uses.</h2>
+                
+                <form class="request-form" action="https://formspree.io/f/xlgbyabw" method="POST">
+                    <input type="email" name="email" class="email-input" placeholder="Enter your email" required>
+                    <button type="submit" class="cta-button">Request Access</button>
+                </form>
+                
+                <div class="features">
+                    <div class="feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Competitive Intelligence</span>
+                    </div>
+                    <div class="feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Spot SDK Trends</span>
+                    </div>
+                    <div class="feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>20,000+ Apps Indexed</span>
+                    </div>
+                </div>
             </div>
-            <div class="feature">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>Spot SDK Trends</span>
-            </div>
-            <div class="feature">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>20,000+ Apps Indexed</span>
+            
+            <div class="hero-image">
+                <img src="hero.png" alt="biniq app preview">
             </div>
         </div>
     </div>
-
-    <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            const email = event.target.querySelector('input').value;
-            alert('Thanks! We\'ll be in touch at ' + email);
-            event.target.reset();
-        }
-    </script>
 </body>
 </html>
